@@ -1,5 +1,6 @@
 {
   "name": "wranglefish",
+  "homepage": "https://fungj.net/wranglefish",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +18,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "react-scripts build && gh-pages -d build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,6 +35,7 @@
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1"
+    "eslint-plugin-react": "^7.11.1",
+    "gh-pages": "^2.0.1"
   }
 }

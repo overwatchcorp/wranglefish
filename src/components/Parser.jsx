@@ -16,21 +16,29 @@ const ParserComponent = state => state.parsers.parsers.map((parser) => {
     let output;
     switch (outputType) {
       case ('vector'): {
-        output = (
-          <div>
-            {warning}
-            <RVector array={data} name={name} />
-          </div>
-        );
+        if (data.length > 0) {
+          output = (
+            <div>
+              {warning}
+              <RVector array={data} name={name} />
+            </div>
+          );
+        } else {
+          output = 'No results';
+        }
         break;
       }
       case ('matrix'): {
-        output = (
-          <div>
-            <b>{warning}</b>
-            <RMatrix matrix={data} name={name} />
-          </div>
-        );
+        if (data[0]) {
+          output = (
+            <div>
+              <b>{warning}</b>
+              <RMatrix matrix={data} name={name} />
+            </div>
+          );
+        } else {
+          output = 'No results';
+        }
         break;
       }
       default: {
