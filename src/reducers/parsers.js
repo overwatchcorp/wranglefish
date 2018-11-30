@@ -27,7 +27,6 @@ const parsers = (state = {
       output: 'matrix',
       func: `
         (textInput, { metadata }) => {
-          console.log(metadata);
           const regex = /[0-9]+, ([a-z])\\n[0-9]+, ([a-z])\\n[0-9]+, ([a-z])/g;
           let warning = null;
           const interactions = [];
@@ -57,7 +56,7 @@ const parsers = (state = {
           // check to see that fish count match matrix dimensions
           // if a fish doesn't interact with any other fish, the matrix may be too small
           if (metadata[4]) {
-            if (parseInt(metadata[4].value) != fish.length) warning = "Warning! The parser did not find a number of fish equal to the number recorded in the metadata. Metadata reported " + metadata[4].value + " fish while the parser found " + fish.length + " fish."
+            if (parseInt(metadata[4].value) != fish.length) warning = "Warning: The parser did not find a number of fish equal to the number recorded in the metadata. Metadata reported " + metadata[4].value + " fish while the parser found " + fish.length + " fish."
           }
 
           const interactionMatrix = fish.map(thisFish => {
