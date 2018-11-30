@@ -9,7 +9,7 @@ const RVector = (props) => {
       &nbsp;&lt;-
       c(
       {
-        array.map((v, i) => `${JSON.stringify(v.value)} ${(array[i + 1]) ? ', ' : ''}`)
+        array.map((v, i) => `${JSON.stringify(v.value)}${(array[i + 1]) ? ',' : ''}`)
       }
       );
     </code>
