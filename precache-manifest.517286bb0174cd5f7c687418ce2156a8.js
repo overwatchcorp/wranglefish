@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/wranglefish/static/js/runtime~main.d449e68e.js"
   },
   {
-    "revision": "d3d70f5ca5a7c5c96c8f",
-    "url": "/wranglefish/static/js/main.d3d70f5c.chunk.js"
+    "revision": "dcf949718348897fa183",
+    "url": "/wranglefish/static/js/main.dcf94971.chunk.js"
   },
   {
     "revision": "d4bd161e69309250fc7d",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/wranglefish/static/css/1.c74a9aa9.chunk.css"
   },
   {
-    "revision": "d3c14ba157fa6fbdee697120dc994610",
+    "revision": "324d432a4ea7fd8aecffbd231290b1ad",
     "url": "/wranglefish/index.html"
   }
 ];
