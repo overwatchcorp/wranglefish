@@ -15,6 +15,13 @@ const App = () => (
       <div className="card container pt-2 pb-2">
         <Parser />
       </div>
+      <small className="float-right text-right">
+        Made in the mLab at Reed College in 2018.
+        <br />
+        Questions? Email&nbsp;
+        <a href="mailto:fungj@reed.edu?subject=Fish data parser">fungj@reed.edu</a>
+        .
+      </small>
     </div>
   </Provider>
 );
