@@ -60,8 +60,13 @@ const ParserComponent = state => state.parsers.parsers.map((parser) => {
             { name }
           </span>
         </h6>
-        <pre><code>{ func }</code></pre>
-        <h6>
+        <button className="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target={'#' + name + 'collapse'} aria-expanded="false" aria-controls={name + 'collapse'}>
+          show parser code
+        </button>
+        <div className="collapse" id={name + 'collapse'}>
+          <pre><code>{ func }</code></pre>
+        </div>
+        <h6 className="mt-1">
           <span style={{ fontFamily: 'Courier' }}>output</span>
         </h6>
         <code>
