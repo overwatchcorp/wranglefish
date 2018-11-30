@@ -6,7 +6,7 @@ const RVector = (props) => {
   return (
     <code>
       {name}
-      &nbsp;&lt;=
+      &nbsp;&lt;-
       c(
       {
         array.map((v, i) => `${JSON.stringify(v.value)} ${(array[i + 1]) ? ', ' : ''}`)
