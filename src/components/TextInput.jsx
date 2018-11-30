@@ -7,6 +7,7 @@ const TextInputComponent = ({ textInput, updateTextInput }) => (
   <div>
     <div className="form-group">
       <textarea
+        autoFocus
         value={textInput.text}
         onChange={updateTextInput}
         rows="5"
