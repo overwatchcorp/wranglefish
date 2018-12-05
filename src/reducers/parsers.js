@@ -1,79 +1,22 @@
+import textInput from './textInput';
 // import { UPDATE_PARSER_ALGORITHM } from '../actions';
 
 const parsers = (state = {
+  functions: {},
   parsers: [
     {
       name: 'metadata',
-      output: 'vector',
-      func: `
-        (textInput) => {
-          const regex = /Answer.([0-9])=(.+)/g;
-          const output = [];
-          do {
-            const data = regex.exec(textInput);
-            if (data) {
-              output.push({
-                question: data[1], 
-                value: data[2],
-              });
-            }
-          } while (regex.lastIndex);
-          return { data: output };
-        }
-      `,
+      output: {
+        type: 'RVector',
+      },
+      url: 'https://gist.githubusercontent.com/overwatchcorp/47eaacd0ae78ce5e871405a1409d92dc/raw/6b971849e3ecf346c7570d9de22fe513f9954b06/fishscript.js',
     },
     {
       name: 'data',
-      output: 'matrix',
-      func: `
-        (textInput, { metadata }) => {
-          const regex = /[0-9]+, ([a-z])\\n[0-9]+, ([a-z])\\n[0-9]+, ([a-z])/g;
-          let warning = null;
-          const interactions = [];
-          do {
-            const data = regex.exec(textInput);
-            if (data) {
-              interactions.push({
-                fish1: data[1], 
-                action: data[2],
-                fish2: data[3],
-              });
-            }
-          } while (regex.lastIndex);
-
-          const getFishKeys = () => {
-            const fish = [];
-            interactions.map(i => {
-              // if fishX isn't in array, push name to array
-              if(fish.indexOf(i.fish1) === -1) fish.push(i.fish1)
-              if(fish.indexOf(i.fish2) === -1) fish.push(i.fish2)
-            });
-            // return alphanetically sorted array of fish
-            return fish.sort();
-          }
-
-          const fish = getFishKeys();
-          // check to see that fish count match matrix dimensions
-          // if a fish doesn't interact with any other fish, the matrix may be too small
-          if (metadata[4]) {
-            if (parseInt(metadata[4].value) != fish.length) warning = "Warning: The parser did not find a number of fish equal to the number recorded in the metadata. Metadata reported " + metadata[4].value + " fish while the parser found " + fish.length + " fish."
-          }
-
-          const interactionMatrix = fish.map(thisFish => {
-            return fish.map(otherFish => {
-               let totalInteractionsInitiatedByThisFish = 0;
-               interactions.map(i => {
-                 if (i.fish1 === thisFish && i.fish2 === otherFish) {
-                   totalInteractionsInitiatedByThisFish += 1;
-                 }
-               })
-               return totalInteractionsInitiatedByThisFish;
-            })
-          })
-
-          return({ data: interactionMatrix, warning });
-        }
-      `,
+      output: {
+        type: 'RMatrix',
+      },
+      url: 'https://gist.githubusercontent.com/overwatchcorp/d37fc76913be743231fd5e96089e4b93/raw/a114f89e35859104be6172ed519f48ca08619ce4/data-fishscriptparser.js',
     },
   ],
 }, action) => {
