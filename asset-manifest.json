@@ -1,13 +1,13 @@
 {
-  "main.js": "/wranglefish/static/js/main.28dafc0d.chunk.js",
-  "main.js.map": "/wranglefish/static/js/main.28dafc0d.chunk.js.map",
-  "static/css/1.c74a9aa9.chunk.css": "/wranglefish/static/css/1.c74a9aa9.chunk.css",
-  "static/js/1.d4bd161e.chunk.js": "/wranglefish/static/js/1.d4bd161e.chunk.js",
-  "static/js/1.d4bd161e.chunk.js.map": "/wranglefish/static/js/1.d4bd161e.chunk.js.map",
+  "main.js": "/wranglefish/static/js/main.a44d07fc.chunk.js",
+  "main.js.map": "/wranglefish/static/js/main.a44d07fc.chunk.js.map",
+  "static/css/1.2fb0e7dc.chunk.css": "/wranglefish/static/css/1.2fb0e7dc.chunk.css",
+  "static/js/1.f597164c.chunk.js": "/wranglefish/static/js/1.f597164c.chunk.js",
+  "static/js/1.f597164c.chunk.js.map": "/wranglefish/static/js/1.f597164c.chunk.js.map",
   "runtime~main.js": "/wranglefish/static/js/runtime~main.d449e68e.js",
   "runtime~main.js.map": "/wranglefish/static/js/runtime~main.d449e68e.js.map",
-  "static/css/1.c74a9aa9.chunk.css.map": "/wranglefish/static/css/1.c74a9aa9.chunk.css.map",
+  "static/css/1.2fb0e7dc.chunk.css.map": "/wranglefish/static/css/1.2fb0e7dc.chunk.css.map",
   "index.html": "/wranglefish/index.html",
-  "precache-manifest.ad9092375a766817ef75cd1c309ec35f.js": "/wranglefish/precache-manifest.ad9092375a766817ef75cd1c309ec35f.js",
+  "precache-manifest.9650ee638340c3a938223018bcde94f3.js": "/wranglefish/precache-manifest.9650ee638340c3a938223018bcde94f3.js",
   "service-worker.js": "/wranglefish/service-worker.js"
 }
