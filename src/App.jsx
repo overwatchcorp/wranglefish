@@ -25,6 +25,8 @@ const App = () => (
         Questions? Email&nbsp;
         <a href="mailto:fungj@reed.edu?subject=Fish data parser">fungj@reed.edu</a>
         .
+        <br />
+        🐟 🐠 🐡
       </small>
     </div>
   </Provider>
