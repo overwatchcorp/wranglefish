@@ -4,6 +4,7 @@ import store from './store';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TextInput from './components/TextInput';
 import Parser from './components/Parser';
+import Docs from './components/Docs';
 
 const App = () => (
   <Provider store={store}>
@@ -14,6 +15,9 @@ const App = () => (
       <h6>Output</h6>
       <div className="card container pt-2 pb-2">
         <Parser />
+      </div>
+      <div className="card container mt-3 pt-2">
+        <Docs />
       </div>
       <small className="float-right text-right">
         Made in the mLab at Reed College in 2018.
