@@ -1,16 +1,32 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import RVector from './RVector';
-import RMatrix from './RMatrix';
+import { getParsers as getParsersAction } from '../actions';
 
-const ParserComponent = state => state.parsers.parsers.map((parser) => {
-  return (
-    <div>
-      <code>{ parser.name }</code>
-    </div>
-  );
-});
+class ParserComponent extends Component {
+  componentWillMount() {
+    const { getParsers, parsers } = this.props;
+    getParsers(parsers.parsers);
+  }
+
+  render() {
+    const { parsers } = this.props;
+    const component = parsers.parsers.map(parser => (
+      <div key={parser.name}>
+        <code>
+          name:&nbsp;
+          { parser.name }
+          <br />
+          fuction:
+          <br />
+          { parser.func }
+        </code>
+        <hr />
+      </div>
+    ));
+    return component;
+  }
+}
 
 ParserComponent.propTypes = () => ({
   parsers: PropTypes.arrayOf({
@@ -24,6 +40,10 @@ const mapStateToProps = ({ textInput, parsers }) => ({
   parsers,
 });
 
-const Parser = connect(mapStateToProps)(ParserComponent);
+const mapDispatchToProps = dispatch => ({
+  getParsers: (parsers) => dispatch(getParsersAction(parsers)),
+});
+
+const Parser = connect(mapStateToProps, mapDispatchToProps)(ParserComponent);
 
 export default Parser;
